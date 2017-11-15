@@ -17,6 +17,15 @@ public class Test {
 		
 		Carre c=new Carre(p,5);
 		System.out.println(c.toString());
+		
+		Point p2= new Point(2,3);
+		System.out.println(p.equals(p2));
+
+		Object o= new Point(2,3);
+		System.out.println(p.equals(o));
+		
+		Rectangle rect= new Rectangle(p2,6,6);
+		System.out.println(rect.surface());
 	}
 
 }

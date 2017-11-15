@@ -1,0 +1,32 @@
+package utils;
+
+public class Segment extends Figure{
+
+	private Point p, p2;
+
+	public Segment(Point debut, int longueur, boolean horizontal) {
+		this.p= new Point(debut.getX(),debut.getY());
+		this.p2= new Point(debut.getX() + (horizontal?longueur:0),debut.getY()+(horizontal?0:longueur));
+	}
+	
+	public Figure getRandomFigure(Object o) {
+		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "[["+this.p.getX()+";"+this.p.getY()+"] à ["+this.p2.getX()+";"+this.p2.getY()+"]]";
+	}
+
+	@Override
+	public Figure getRandomFigure() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Point[] getPoints() {
+		Point points[]= {this.p, this.p2};
+		return points;
+	}
+}
