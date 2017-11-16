@@ -36,12 +36,27 @@ public class Rectangle extends Figure implements Surfacable{
 
 	@Override
 	public double surface() {
-		return (double)h/l;
+		return (double)h*l;
 	}
 
 	@Override
 	public Point[] getPoints() {
 		Point points[]= {this.p, this.p1, this.p2, this.p3};
 		return points;
+	}
+
+	@Override
+	public boolean couvre(Point p) {
+		
+		if(p.getX() < this.p.getX())
+			return false;
+		if(p.getX() > this.p1.getX())
+			return false;
+		if(p.getY() < this.p.getY())
+			return false;
+		if(p.getY() > this.p3.getY())
+			return false;
+		
+		return true;
 	}
 }

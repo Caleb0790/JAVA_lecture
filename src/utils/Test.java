@@ -24,8 +24,10 @@ public class Test {
 		Object o= new Point(2,3);
 		System.out.println(p.equals(o));
 		
-		Rectangle rect= new Rectangle(p2,6,6);
+		Rectangle rect= new Rectangle(p2,6,2);
 		System.out.println(rect.surface());
+		
+		System.out.println(c.surface());
 	}
 
 }

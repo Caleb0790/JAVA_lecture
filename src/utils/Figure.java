@@ -22,4 +22,6 @@ public abstract class Figure {
 	public abstract Figure getRandomFigure();
 	
 	public abstract Point[] getPoints();
+	
+	public abstract boolean couvre(Point p);
 }

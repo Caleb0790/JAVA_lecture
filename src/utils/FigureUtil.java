@@ -1,10 +1,33 @@
 package utils;
 
+import java.util.Random;
+
 public class FigureUtil {
 	
+	private static Random random= new Random();
 	
 	public static Rond getRandomRond() {
-		return new Rond(new Point((int)Math.random(),(int)Math.random()), (int)Math.random());
+		return new Rond(new Point(random.nextInt(100),random.nextInt(100)), random.nextInt(100));
+	}
+	
+	public static Carre getRandomCarre(){
+		return new Carre(new Point(random.nextInt(100),random.nextInt(100)), random.nextInt(100));
+	}
+	
+	public static Rectangle getRandomRectangle() {
+		return new Rectangle(new Point(random.nextInt(100),random.nextInt(100)),random.nextInt(100),random.nextInt(100));
+	}
+	
+	public static Figure getRandomFigure() {
+		Figure f;
+		int i=random.nextInt(2);
+		switch(i) {
+			case 0: f=getRandomRond(); break;
+			case 1: f=getRandomCarre(); break;
+			case 2: f=getRandomRectangle(); break;
+			default: f=null;
+		}
+		return f;
 	}
 	
 	public static Point[] getPoints(Figure... f) {
@@ -22,4 +45,6 @@ public class FigureUtil {
 		}
 		return points;
 	}
+	
+	
 }

@@ -29,4 +29,19 @@ public class Segment extends Figure{
 		Point points[]= {this.p, this.p2};
 		return points;
 	}
+
+	@Override
+	public boolean couvre(Point p) {
+		
+		if(p.getX() < this.p.getX())
+			return false;
+		if(p.getX() > this.p2.getX())
+			return false;
+		if(p.getY() < this.p.getY())
+			return false;
+		if(p.getY() > this.p2.getY())
+			return false;
+		
+		return true;
+	}
 }
