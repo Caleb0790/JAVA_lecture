@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.Iterator;
 import java.util.Random;
 
 public class FigureUtil {
@@ -46,5 +47,14 @@ public class FigureUtil {
 		return points;
 	}
 	
+	public static Figure getFigureEn(Point p, Dessin d) {
+		Iterator<Figure> interator=d.getFigures().iterator();
+		while (interator.hasNext()) {
+			Figure figure = (Figure) interator.next();
+			if(figure.couvre(p))
+				return figure;
+		}
+		return null;
+	}
 	
 }

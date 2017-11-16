@@ -28,6 +28,12 @@ public class Test {
 		System.out.println(rect.surface());
 		
 		System.out.println(c.surface());
+		
+		System.out.println("======================");
+		Point p3= new Point(9,6);
+		System.out.println(p3);
+		System.out.println(r);
+		System.out.println(r.couvre(p3));
 	}
 
 }
