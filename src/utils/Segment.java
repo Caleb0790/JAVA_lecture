@@ -4,9 +4,14 @@ public class Segment extends Figure{
 
 	private Point p, p2;
 
-	public Segment(Point debut, int longueur, boolean horizontal) {
+	public Segment(Point debut, int longueur, boolean horizontal, Couleur c) {
+		super(c);
 		this.p= new Point(debut.getX(),debut.getY());
 		this.p2= new Point(debut.getX() + (horizontal?longueur:0),debut.getY()+(horizontal?0:longueur));
+	}
+	
+	public Segment(Point debut, int longueur, boolean horizontal) {
+		this(debut,longueur,horizontal,Couleur.getCouleurDefaut());
 	}
 	
 	public Figure getRandomFigure(Object o) {

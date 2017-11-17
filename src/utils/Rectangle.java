@@ -9,13 +9,19 @@ public class Rectangle extends Figure implements Surfacable{
 	private int h;
 	private int l;
 	
-	public Rectangle(Point p, int h, int l) {
+	public Rectangle(Point p, int h, int l, Couleur c) {
+		super(c);
 		this.h=h;
 		this.l=l;
 		this.p= new Point(p.getX(),p.getY());
 		this.p1= new Point(this.p.getX()+l, this.p.getY());
 		this.p2= new Point(this.p.getX()+l, this.p.getY()+h);
 		this.p3= new Point(this.p.getX(), this.p.getY()+h);
+	}
+	
+	public Rectangle(Point p, int h, int l) {
+		this(p,h,l,Couleur.getCouleurDefaut());
+
 	}
 	
 	public Point getPointBasGuache() {return p3;}

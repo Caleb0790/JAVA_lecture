@@ -4,9 +4,14 @@ public class Rond extends Figure implements Surfacable{
 	private int r;
 	private Point p;
 	
-	public Rond(Point p, int r) {
+	public Rond(Couleur c, Point p, int r) {
+		super(c);
 		this.p=p;
 		this.r=r;
+	}
+	
+	public Rond(Point p, int r) {
+		this(Couleur.getCouleurDefaut(),p,r);
 	}	
 	
 	@Override

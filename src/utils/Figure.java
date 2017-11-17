@@ -2,8 +2,10 @@ package utils;
 
 public abstract class Figure {
 
-	public Figure() {
-
+	private Couleur c;
+	
+	public Figure(Couleur c) {
+		this.c=c;
 	}
 	
 	public abstract String toString();
@@ -24,4 +26,8 @@ public abstract class Figure {
 	public abstract boolean couvre(Point p);
 	
 	protected abstract String getType();
+	
+	protected Couleur getCouleur() {
+		return this.c;
+	}
 }

@@ -87,10 +87,26 @@ public class Test {
 		System.out.println("Has "+points.length+" Point.");
 		
 		
-		Point p3= new Point(9,6);
+		/* *********************************************
+		 * Java30 : Enumeration
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA30: Enumeration");
+		System.out.println("=================================");
+				
+		//Point p3= new Point(9,6);
 		//p3.affiche();
 		//r.afficher();
 		//System.out.println(r.couvre(p3));
+		
+		Couleur cb=Couleur.Bleu;
+		System.out.println("Color: "+cb);
+		System.out.println("Color code: "+cb.getCouleurCode());
+		System.out.println("Default: "+Couleur.getCouleurDefaut());
+		
+		Segment s3=new Segment(p2, 52, true, cb);
+		s3.afficher();
+		
 	}
 
 }
