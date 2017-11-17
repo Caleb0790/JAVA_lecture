@@ -21,13 +21,13 @@ public class Carre extends Rectangle{
 	public Point getPointHautGauche() {return p;}
 	public Point getPointHautDroite() {return p1;}
 	
-	public String toString() {
-			return "[CARRE ["+p.getX()+";"+p.getY()+"]["+p1.getX()+";"+p1.getY()+"]["+p2.getX()+";"+p2.getY()+"]["+p3.getX()+";"+p3.getY()+"]]";
-	}
-
 	@Override
-	public Figure getRandomFigure() {
+	protected String getType() {
 		// TODO Auto-generated method stub
-		return null;
+		return "CARRE";
+	}
+	
+	public String toString() {
+			return "["+getType()+" ["+p.getX()+";"+p.getY()+"]["+p1.getX()+";"+p1.getY()+"]["+p2.getX()+";"+p2.getY()+"]["+p3.getX()+";"+p3.getY()+"]]";
 	}
 }

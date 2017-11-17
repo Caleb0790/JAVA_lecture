@@ -9,14 +9,14 @@ public class Rond extends Figure implements Surfacable{
 		this.r=r;
 	}	
 	
-	public String toString(){
-		return "[ROND ["+p.getX()+";"+p.getY()+"], "+r+"]";
-	}
-
 	@Override
-	public Figure getRandomFigure() {
+	protected String getType() {
 		// TODO Auto-generated method stub
-		return null;
+		return "ROND";
+	}
+	
+	public String toString(){
+		return "["+getType()+" ["+p.getX()+";"+p.getY()+"], "+r+"]";
 	}
 
 	@Override
@@ -27,8 +27,8 @@ public class Rond extends Figure implements Surfacable{
 	@Override
 	public Point[] getPoints() {
 	
-		Point p1[]= {this.p};
-		return p1;
+		Point p[]= {this.p};
+		return p;
 	}
 
 	@Override

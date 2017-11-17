@@ -23,15 +23,13 @@ public class Rectangle extends Figure implements Surfacable{
 	public Point getPointHautGauche() {return p;}
 	public Point getPointHautDroite() {return p1;}
 	
-	public String toString() {
-			return "[RECT ["+p.getX()+";"+p.getY()+"]["+p1.getX()+";"+p1.getY()+"]["+p2.getX()+";"+p2.getY()+"]["+p3.getX()+";"+p3.getY()+"]]";
-	}
-
-
 	@Override
-	public Figure getRandomFigure() {
-		// TODO Auto-generated method stub
-		return null;
+	protected String getType() {
+		return "RECT";
+	}
+	
+	public String toString() {
+			return "["+getType()+" ["+p.getX()+";"+p.getY()+"]["+p1.getX()+";"+p1.getY()+"]["+p2.getX()+";"+p2.getY()+"]["+p3.getX()+";"+p3.getY()+"]]";
 	}
 
 	@Override

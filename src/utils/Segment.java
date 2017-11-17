@@ -19,12 +19,6 @@ public class Segment extends Figure{
 	}
 
 	@Override
-	public Figure getRandomFigure() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Point[] getPoints() {
 		Point points[]= {this.p, this.p2};
 		return points;
@@ -43,5 +37,11 @@ public class Segment extends Figure{
 			return false;
 		
 		return true;
+	}
+
+	@Override
+	protected String getType() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

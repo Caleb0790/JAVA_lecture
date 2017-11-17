@@ -5,30 +5,61 @@ import java.util.Random;
 
 public class FigureUtil {
 	
-	private static Random random= new Random();
+	private static int MIN_NUM=0;
+	private static int MAX_NUM=100;
+	
+	
+	private static int getRandNum() {
+		Random r = new Random();
+		return r.nextInt((MAX_NUM - MIN_NUM) + 1) + MIN_NUM;
+	}
+	
+	private static Point getRandomPoint() {
+		return new Point(getRandNum(),getRandNum());
+	}
 	
 	public static Rond getRandomRond() {
-		return new Rond(new Point(random.nextInt(100),random.nextInt(100)), random.nextInt(100));
+		return new Rond(getRandomPoint(), getRandNum());
 	}
 	
 	public static Carre getRandomCarre(){
-		return new Carre(new Point(random.nextInt(100),random.nextInt(100)), random.nextInt(100));
+		return new Carre(getRandomPoint(), getRandNum());
 	}
 	
 	public static Rectangle getRandomRectangle() {
-		return new Rectangle(new Point(random.nextInt(100),random.nextInt(100)),random.nextInt(100),random.nextInt(100));
+		return new Rectangle(getRandomPoint(),getRandNum(),getRandNum());
 	}
+	
+	public static Segment getRandomSegment() {
+		return new Segment(getRandomPoint(),getRandNum(), Math.random() < 0.5);
+	}
+
 	
 	public static Figure getRandomFigure() {
 		Figure f;
-		int i=random.nextInt(2);
+		Random random= new Random();
+		int i=random.nextInt(4);
+		switch(i) {
+			case 0: f=getRandomRond(); break;
+			case 1: f=getRandomCarre(); break;
+			case 2: f=getRandomRectangle(); break;
+			case 3: f=getRandomSegment(); break;
+			default: f=null;
+		}
+		return f;
+	}
+	
+	public static Surfacable getRandomSurfacable() {
+		Surfacable f;
+		Random random= new Random();
+		int i=random.nextInt(3);
 		switch(i) {
 			case 0: f=getRandomRond(); break;
 			case 1: f=getRandomCarre(); break;
 			case 2: f=getRandomRectangle(); break;
 			default: f=null;
 		}
-		return f;
+		return f;	
 	}
 	
 	public static Point[] getPoints(Figure... f) {

@@ -16,11 +16,11 @@ public class Point{
 	}
 
 	public int getX() {
-		return x;
+		return this.x;
 	}
 
 	public int getY() {
-		return y;
+		return this.y;
 	}
 
 	public void setX(int x) {
@@ -35,9 +35,13 @@ public class Point{
 		String s = "[" + x + ";" + y + "]";
 		return s;
 	}
+	
+	public void affiche() {
+		System.out.println(toString());
+	}
 
 	public boolean equals(Object o) {
-		if (super.equals(o)) {
+		if (o instanceof Point) {
 
 			Point p = (Point) o;
 

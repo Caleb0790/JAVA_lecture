@@ -4,6 +4,11 @@ public class Test {
 
 	public static void main(String[] args) {
 	
+		/* *********************************************
+		 * Java10 : Classes
+		 * *********************************************/
+		System.out.println("JAVA10: Classes");
+		System.out.println("=================================");
 		Point p=new Point(2,3);
 		System.out.println(p.getX());
 		System.out.println(p.getY());
@@ -15,25 +20,77 @@ public class Test {
 		Rectangle rec= new Rectangle(p, 5,6);
 		System.out.println(rec.toString());
 		
+		/* *********************************************
+		 * Java12 : Heritage
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA12: Heritage");
+		System.out.println("=================================");
+		
 		Carre c=new Carre(p,5);
-		System.out.println(c.toString());
+		c.afficher();
+		
+		/* *********************************************
+		 * Java13 : Egalité de points
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA13: Egalité de points");
+		System.out.println("=================================");		
 		
 		Point p2= new Point(2,3);
-		System.out.println(p.equals(p2));
-
 		Object o= new Point(2,3);
-		System.out.println(p.equals(o));
 		
-		Rectangle rect= new Rectangle(p2,6,2);
-		System.out.println(rect.surface());
+		System.out.print("P1: ");
+		p2.affiche();
+		System.out.println("P2: Object with same position");
 		
-		System.out.println(c.surface());
+		System.out.println("Equal= "+p2.equals(o));
+			
+		/* *********************************************
+		 * Java14 : Classe abstraite
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA14: Classe abstraite");
+		System.out.println("=================================");
 		
-		System.out.println("======================");
+		for(int i=0; i<5; i++)
+			FigureUtil.getRandomFigure().afficher();
+			
+		
+		/* *********************************************
+		 * Java15 : Interface
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA15: Interface");
+		System.out.println("=================================");
+		
+		Surfacable f=null;
+		for(int i=0; i<5; i++) {
+			f= FigureUtil.getRandomSurfacable();
+			System.out.println("Surface="+f.surface()+" ");
+			((Figure) f).afficher(); 
+			System.out.println("---------------------------------");
+		}
+		
+		/* *********************************************
+		 * Java20 : Tableau
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA20: Tableau");
+		System.out.println("=================================");
+		
+		Figure f2=FigureUtil.getRandomFigure();
+		System.out.println("Random "+f2.getType());
+		Point points[]= f2.getPoints();
+		for(int i=0; i<points.length; i++)
+			points[i].affiche();
+		System.out.println("Has "+points.length+" Point.");
+		
+		
 		Point p3= new Point(9,6);
-		System.out.println(p3);
-		System.out.println(r);
-		System.out.println(r.couvre(p3));
+		//p3.affiche();
+		//r.afficher();
+		//System.out.println(r.couvre(p3));
 	}
 
 }

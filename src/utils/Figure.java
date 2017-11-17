@@ -18,10 +18,10 @@ public abstract class Figure {
 		else 
 			return false;
 	}
-
-	public abstract Figure getRandomFigure();
 	
 	public abstract Point[] getPoints();
 	
 	public abstract boolean couvre(Point p);
+	
+	protected abstract String getType();
 }
