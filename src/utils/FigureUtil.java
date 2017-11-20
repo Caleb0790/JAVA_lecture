@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -47,6 +49,16 @@ public class FigureUtil {
 			default: f=null;
 		}
 		return f;
+	}
+	
+	public static Collection<Figure> genere(int number){
+		Collection<Figure> figures= new ArrayList<>();
+		int i=0;
+		while(i<number) {
+			figures.add(getRandomFigure());
+			i++;
+		}
+		return figures;
 	}
 	
 	public static Surfacable getRandomSurfacable() {

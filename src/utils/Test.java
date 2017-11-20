@@ -1,5 +1,9 @@
 package utils;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+
 public class Test {
 
 	public static void main(String[] args) {
@@ -86,6 +90,47 @@ public class Test {
 			points[i].affiche();
 		System.out.println("Has "+points.length+" Point.");
 		
+
+		/* *********************************************
+		 * Java21 : Choix de collection
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA21: Choix de collection");
+		System.out.println("=================================");
+		
+		ArrayList<Figure> fs= (ArrayList<Figure>) FigureUtil.genere(5);
+		
+		for (int i = 0; i < fs.size(); i++) {
+			fs.get(i).afficher();	
+		}
+		
+		
+		/* *********************************************
+		 * Java22 : Itérator
+		 * *********************************************/
+		System.out.println();
+		System.out.println("JAVA22: Itérator");
+		System.out.println("=================================");
+		
+		Dessin d= new Dessin();
+		int i=0;
+		while(i<5) {
+			d.add(FigureUtil.getRandomFigure());
+			i++;
+		}
+		System.out.println(FigureUtil.getFigureEn(p2, d));
+		ArrayList<Figure> fs2 = (ArrayList<Figure>) d.getFigures();
+		
+		Iterator<Figure> itr= fs2.iterator();
+		
+		System.out.println("Liste de figures:");
+		while(itr.hasNext()) {
+			Figure fig =itr.next();
+			fig.afficher();
+		}
+		
+		System.out.println("Figure couvrant le point " + p2.toString());
+		System.out.println(FigureUtil.getFigureEn(p2, d));
 		
 		/* *********************************************
 		 * Java30 : Enumeration
@@ -107,6 +152,19 @@ public class Test {
 		Segment s3=new Segment(p2, 52, true, cb);
 		s3.afficher();
 		
+		/* *********************************************
+		 * Java : Thread
+		 * *********************************************/
+		System.out.println();
+		System.out.println("Java : Thread");
+		System.out.println("=================================");		
+
+		MonThread t1= new MonThread("1", 15);
+		MonThread t2= new MonThread("2", 20);
+		t1.start();
+		System.out.println();
+		t2.start();
+		System.out.println();
 	}
 
 }
